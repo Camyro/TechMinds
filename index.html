@@ -1,16 +1,72 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>replit</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechMinds</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  Hello world
-  <script src="script.js"></script>
+
+    <header id="menu">
+
+    </header>
+    <main>
+        <section class="p1">
+            <div class="degrade">
+                <img src="imagens/billESuaCasa.png" class="piramede" alt="logo">
+            </div>
+        </section>
+
+        <section class="p2">
+            <a href="calculadora">
+                <div class="botaoGrande" id="botaoGrande1">
+                    <img src="imagens/calculadora.png" class="botaoimg" alt="spike">
+                    <p>Calculadora</p>
+                </div>
+            </a>
+
+            <!--<div class="botaoGrande">
+                <img src="imagens/manual.png" class="botaoimg" alt="spike">
+                <p>Manuais</p>
+            </div>-->
+
+        </section>
+    </main>
+
+    <footer>
+        
+    </footer>
+
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-analytics.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBEVvm_p8aB8KqQZu3uhfyFNqB3kLaPwKg",
+            authDomain: "techminds-f4838.firebaseapp.com",
+            projectId: "techminds-f4838",
+            storageBucket: "techminds-f4838.firebasestorage.app",
+            messagingSenderId: "528859331234",
+            appId: "1:528859331234:web:b73df6c15d3e33f91d75fb",
+            measurementId: "G-7RKWDRXFWW"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
+
+    <script src="index.js"></script>
+
 </body>
 
 </html>
