@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5550330300480012"
+    crossorigin="anonymous"></script>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Tech Minds - Calculadora</title>
+  <link rel="stylesheet" href="index.css">
+
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script>
+    ScrollReveal({reset: true});
+  </script>
+</head>
+
+<body>
+
+  <div class="calc-header">
+    <h1>Calculadora</h1>
+    <a href="../index.html" class="back-link">Voltar</a>
+  </div>
+
+  <div class="calc-container">
+    <h2 class="calc-title">Calculadora de Pontuação</h2>
+
+    <!--Inicio-->
+    <div class="section-content">
+      <h3>🏁 Inicio</h3>
+      <div class="checkbox-group">
+        <input type="checkbox" id="inicio" class="checkbox">
+        <label for="inicio" class="checkbox-label">Saiu do ladrilho inicial de primeira?</label>
+      </div>
+    </div>
+
+    <!--Ladrilhos-->
+    <div class="section-content">
+      <h3>🔲 Ladrilhos</h3>
+      
+      <div class="form-group">
+        <label>Primeira Tentativa (5 pontos)</label>
+        <input type="number" id="ladrilhoDe1" class="caixaDeTexto" min="0" placeholder="0">
+      </div>
+
+      <div class="form-group">
+        <label>Segunda Tentativa (3 pontos)</label>
+        <input type="number" id="ladrilhoDe2" class="caixaDeTexto" min="0" placeholder="0">
+      </div>
+
+      <div class="form-group">
+        <label>Terceira Tentativa (1 ponto)</label>
+        <input type="number" id="ladrilhoDe3" class="caixaDeTexto" min="0" placeholder="0">
+      </div>
+    </div>
+
+    <!--Perigos-->
+    <div class="section-content">
+      <h3>⚠️ Perigos</h3>
+      
+      <div class="form-group">
+        <label>Superar Interseção ou Beco sem Saída (10 pontos)</label>
+        <input type="number" id="BecoESaida" class="caixaDeTexto" min="0" placeholder="0">
+      </div>
+
+      <div class="form-group">
+        <label>Superar uma Gangorra (20 pontos)</label>
+        <input type="number" id="Gangorra" class="caixaDeTexto" min="0" placeholder="0">
+      </div>
+
+      <div class="form-group">
+        <label>Desviar de um Obstáculo (20 pontos)</label>
+        <input type="number" id="obstaculo" class="caixaDeTexto" min="0" placeholder="0">
+      </div>
+
+      <div class="form-group">
+        <label>Superar um Ladrilho Contendo Gap(s) (10 pontos)</label>
+        <input type="number" id="gap" class="caixaDeTexto" min="0" placeholder="0">
+      </div>
+
+      <div class="form-group">
+        <label>Subir ou Descer Cada Ladrilho Contendo uma Rampa (10 pontos)</label>
+        <input type="number" id="rampa" class="caixaDeTexto" min="0" placeholder="0">
+      </div>
+
+      <div class="form-group">
+        <label>Superar um Ladrilho Contendo Lombada(s) (10 pontos)</label>
+        <input type="number" id="lombada" class="caixaDeTexto" min="0" placeholder="0">
+      </div>
+    </div>
+
+    <!--Resgate-->
+    <div class="section-content">
+      <h3>🚑 Resgate</h3>
+      
+      <div class="area-group area-verde">
+        <div class="area-title">Área Verde</div>
+        <div class="checkbox-group">
+          <input type="checkbox" id="GG" class="checkbox">
+          <label for="GG" class="checkbox-label">Vítima Viva (1.3)</label>
+        </div>
+        <div class="checkbox-group">
+          <input type="checkbox" id="GG2" class="checkbox">
+          <label for="GG2" class="checkbox-label">Vítima Viva (1.3)</label>
+        </div>
+        <div class="checkbox-group">
+          <input type="checkbox" id="GR" class="checkbox">
+          <label for="GR" class="checkbox-label">Vítima Morta (1.1)</label>
+        </div>
+      </div>
+
+      <div class="area-group area-vermelha">
+        <div class="area-title">Área Vermelha</div>
+        <div class="checkbox-group">
+          <input type="checkbox" id="RG" class="checkbox">
+          <label for="RG" class="checkbox-label">Vítima Viva (1.1)</label>
+        </div>
+        <div class="checkbox-group">
+          <input type="checkbox" id="RG2" class="checkbox">
+          <label for="RG2" class="checkbox-label">Vítima Viva (1.1)</label>
+        </div>
+        <div class="checkbox-group">
+          <input type="checkbox" id="RR" class="checkbox">
+          <label for="RR" class="checkbox-label">Vítima Morta (1.3)</label>
+        </div>
+      </div>
+    </div>
+
+    <!--Desafio Surpresa-->
+    <div class="section-content">
+      <h3>🎯 Desafio Surpresa</h3>
+      <div class="checkbox-group">
+        <input type="checkbox" id="desafio" class="checkbox">
+        <label for="desafio" class="checkbox-label">Desafio completo? (1.5)</label>
+      </div>
+    </div>
+
+    <!--Final-->
+    <div class="section-content">
+      <h3>🏆 Final</h3>
+      <div class="checkbox-group">
+        <input type="checkbox" id="final" class="checkbox">
+        <label for="final" class="checkbox-label">Ficou parado por 5 segundos na linha vermelha? (60 pontos)</label>
+      </div>
+
+      <div class="form-group">
+        <label>Quantas tentativas teve no último checkpoint? (60 - 5X)</label>
+        <input type="number" id="tentativas" class="caixaDeTexto" min="0" placeholder="0">
+      </div>
+    </div>
+
+    <!--Resultado-->
+    <div class="section-content resultado-section">
+      <h3>📊 Resultado Final</h3>
+      <div id="resultado">0</div>
+    </div>
+  </div>
+
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-analytics.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyBEVvm_p8aB8KqQZu3uhfyFNqB3kLaPwKg",
+      authDomain: "techminds-f4838.firebaseapp.com",
+      projectId: "techminds-f4838",
+      storageBucket: "techminds-f4838.firebasestorage.app",
+      messagingSenderId: "528859331234",
+      appId: "1:528859331234:web:b73df6c15d3e33f91d75fb",
+      measurementId: "G-7RKWDRXFWW"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script>
+
+  <script src="calculator.js"></script>
+  <script src="guard.js"></script>
+
+  <script>
+    document.getElementById("ladrilhoDe1").addEventListener("input", function () {
+      this.value = this.value.replace(/\D/g, ""); // remove tudo que não for número
+    });
+    document.getElementById("ladrilhoDe2").addEventListener("input", function () {
+      this.value = this.value.replace(/\D/g, ""); // remove tudo que não for número
+    });
+    document.getElementById("ladrilhoDe3").addEventListener("input", function () {
+      this.value = this.value.replace(/\D/g, ""); // remove tudo que não for número
+    });
+    document.getElementById("BecoESaida").addEventListener("input", function () {
+      this.value = this.value.replace(/\D/g, ""); // remove tudo que não for número
+    });
+    document.getElementById("Gangorra").addEventListener("input", function () {
+      this.value = this.value.replace(/\D/g, ""); // remove tudo que não for número
+    });
+    document.getElementById("obstaculo").addEventListener("input", function () {
+      this.value = this.value.replace(/\D/g, ""); // remove tudo que nãoför número
+    });
+    document.getElementById("gap").addEventListener("input", function () {
+      this.value = this.value.replace(/\D/g, ""); // remove tudo que não for número
+    });
+    document.getElementById("rampa").addEventListener("input", function () {
+      this.value = this.value.replace(/\D/g, ""); // remove tudo que não for número
+    });
+    document.getElementById("lombada").addEventListener("input", function () {
+      this.value = this.value.replace(/\D/g, ""); // remove tudo que não for número
+    });
+    document.getElementById("tentativas").addEventListener("input", function () {
+      this.value = this.value.replace(/\D/g, ""); // remove tudo que não for número
+    });
+  </script>
+</body>
+
+</html>

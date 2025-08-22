@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Question Generator - Basic</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="calc-header">
+        <h1>Gerador básico de perguntas da OBR</h1>
+        <a href="../../index.html" class="back-link">Voltar</a>
+    </div>
+    <button onclick="generateQuestion()">Gerar Questão</button>
+    <div id="question"></div>
+
+    <script>
+        const questions = [
+            "?",
+            "What is the capital of France?",
+            "What is the meaning of life?",
+            "What is your favorite food?",
+            "What is your dream vacation?"
+        ];
+
+        function generateQuestion() {
+            const randomIndex = Math.floor(Math.random() * questions.length);
+            document.getElementById("question").textContent = questions[randomIndex];
+        }
+    </script>
+</body>
+</html>

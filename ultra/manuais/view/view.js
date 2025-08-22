@@ -12,7 +12,7 @@ function findTransactions() {
     }
 
     firebase.firestore()
-        .collection('teste')
+        .collection('sites')
         .get()
         .then(snapshot => {
             if (snapshot.empty) {
@@ -31,12 +31,13 @@ function findTransactions() {
 function addTransactionsToScreen(teste) {
     // Obter parâmetros da URL
     const urlParams = new URLSearchParams(window.location.search);
-    const siteParam = urlParams.get('site');
+    const siteParam = urlParams.get('const');
+    console.info("const is " + siteParam);
     
     var element = document.getElementById('element');
     if (element && teste.length > 0) {
-        // Usar o parâmetro da URL se existir, senão usar o valor do Firebase
-        const siteValue = siteParam || teste[0].site || 'Dados não encontrados';
+        const propertyName = siteParam; // Se siteParam estiver presente, use isso, caso contrário, use 'site'
+        const siteValue = teste[0][propertyName] || 'Dados não encontrados'; // Acessa a propriedade dinamicamente
         element.innerHTML = siteValue;
     } else if (!element) {
         console.error('Elemento com id "element" não encontrado no DOM.');

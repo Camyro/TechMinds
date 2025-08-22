@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Imagens em formato de PDF (sem espaços em branco)</title>
+
+  <style>
+    :root {
+      --bg: #2c6d8d;
+      --fg: #fff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      height: 100%;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+    }
+
+    .actions {
+      display: flex;
+      gap: 12px;
+      margin: 20px;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    button {
+      background-color: rgb(255, 255, 255, 5%);
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #ddd;
+      color: #2c6d8d;
+    }
+
+    button a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    main {
+      padding: 22px 10px 64px;
+    }
+
+    .pages {
+      display: grid;
+      gap: 22px;
+      place-items: center;
+    }
+
+    .page {
+      width: min(100%, 900px);
+    }
+
+    .page img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 0;
+    }
+  </style>
+
+</head>
+
+<body id="element">
+
+
+
+
+</body>
+
+<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+
+<!-- Add Firebase products that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyBEVvm_p8aB8KqQZu3uhfyFNqB3kLaPwKg",
+    authDomain: "techminds-f4838.firebaseapp.com",
+    projectId: "techminds-f4838",
+    storageBucket: "techminds-f4838.firebasestorage.app",
+    messagingSenderId: "528859331234",
+    appId: "1:528859331234:web:b73df6c15d3e33f91d75fb",
+    measurementId: "G-7RKWDRXFWW"
+  };
+
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+
+
+
+<script src="view.js"></script>
+
+</html>
