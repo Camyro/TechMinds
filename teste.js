@@ -29,9 +29,15 @@ function findTransactions() {
 }
 
 function addTransactionsToScreen(teste) {
+    // Obter parâmetros da URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const siteParam = urlParams.get('site');
+    
     var element = document.getElementById('element');
     if (element && teste.length > 0) {
-        element.innerHTML = teste[0].site || 'Dados não encontrados';
+        // Usar o parâmetro da URL se existir, senão usar o valor do Firebase
+        const siteValue = siteParam || teste[0].site || 'Dados não encontrados';
+        element.innerHTML = siteValue;
     } else if (!element) {
         console.error('Elemento com id "element" não encontrado no DOM.');
     }
