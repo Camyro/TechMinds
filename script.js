@@ -5,7 +5,7 @@ var terra = document.getElementById('terra');
 firebase.auth().onAuthStateChanged(user => {
     if (!user) {
         element.innerHTML = `<h1>TechMinds</h1>
-        <a href="login"><button>Login</button></a>`;
+        <a href="login/"><button>Login</button></a>`;
     } else{
         element.innerHTML = `<h1>TechMinds</h1>
         <div class="user-info">
