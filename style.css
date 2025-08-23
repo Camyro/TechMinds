@@ -16,6 +16,7 @@ header {
   padding: 20px;
   background-color: #2c6d8d;
   color: white;
+  overflow: hidden;
 }
 
 header h1 {
@@ -128,6 +129,7 @@ header button:hover {
 .terra{
   background-image: url("img/terra.svg");
   padding: 0;
+  color: white;
 }
 
 #centro{
@@ -173,4 +175,18 @@ header button:hover {
     flex-direction: column;
     height: auto;
   }
+
+  .user-email{
+    max-width: 150px;
+  }
+}
+
+.user-email {
+  color: white;
+  font-size: 16px;
+  font-weight: normal;
+  min-width: 50px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
