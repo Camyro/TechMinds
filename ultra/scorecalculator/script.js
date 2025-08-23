@@ -103,4 +103,5 @@ setInterval(function() {
   
   document.getElementById("resultado").innerHTML = total;
 }
-, 1)  
+, 1) 
+

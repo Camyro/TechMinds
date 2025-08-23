@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard de Pontuações</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-analytics.js"></script>
+    <script>
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBEVvm_p8aB8KqQZu3uhfyFNqB3kLaPwKg",
+            authDomain: "techminds-f4838.firebaseapp.com",
+            projectId: "techminds-f4838",
+            storageBucket: "techminds-f4838.firebasestorage.app",
+            messagingSenderId: "528859331234",
+            appId: "1:528859331234:web:b73df6c15d3e33f91d75fb",
+            measurementId: "G-7RKWDRXFWW"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Dashboard de Pontuações</h1>
+            <a href="../index.html" class="back-link">Voltar</a>
+        </div>
+
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-number" id="total-avaliacoes">-</div>
+                <div>Total de Envios</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="usuarios-unicos">-</div>
+                <div>Usuários Únicos</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="pontuacao-media">-</div>
+                <div>Pontuação Média</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="maior-pontuacao">-</div>
+                <div>Maior Pontuação</div>
+            </div>
+        </div>
+
+        <div class="tabs">
+            <button class="tab active" onclick="showTab('todas')">Pontuações</button>
+            <button class="tab" onclick="showTab('ranking')">Ranking</button>
+        </div>
+
+        <div id="todas" class="tab-content active">
+            <h3>Histórico Completo</h3>
+            <div id="loading" class="loading">
+                <div class="loading-spinner"></div>
+                <p>Carregando dados...</p>
+            </div>
+            <div id="pontuacoes-container" class="pontuacoes-list" style="display: none;"></div>
+        </div>
+
+        <div id="ranking" class="tab-content">
+            <h3>Ranking - Pontuações mais recentes</h3>
+            <div id="ranking-container"></div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Detalhes da Avaliação</h2>
+                <span class="close" onclick="closeModal()">&times;</span>
+            </div>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+</html>

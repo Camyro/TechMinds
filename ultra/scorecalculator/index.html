@@ -26,7 +26,10 @@
 
   <div class="calc-header">
     <h1>Calculator Ultra</h1>
-    <a href="../../index.html" class="back-link">Voltar</a>
+    <div class="calc-header-links">
+      <a href="view/" class="back-link" style="margin: 0 10px 0 10px; text-align: center;">View Dashboard</a>
+      <a href="../../index.html" class="back-link">Voltar</a>
+    </div>
   </div>
 
   <div class="calc-container">
@@ -42,7 +45,7 @@
         <div class="timer-status" id="timer-status">Pronto para iniciar</div>
       </div>
     </div>
-    
+
     <h2 class="calc-title">Calculadora de Pontuação</h2>
 
     <!--Inicio-->
@@ -174,6 +177,11 @@
       <h3>📊 Resultado Final</h3>
       <div id="resultado">0</div>
     </div>
+
+    <div class="form-group">
+      <button class="timer-btn" id="btn-salvar" onclick="enviarParaServidor()">Enviar para o servidor</button>
+    </div>
+    <p style="text-align: center;">Envie os dados somente depois de verificar</p>
   </div>
 
   <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
@@ -181,6 +189,7 @@
 
   <!-- Add Firebase products that you want to use -->
   <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-analytics.js"></script>
 
   <script>
@@ -200,9 +209,11 @@
     firebase.analytics();
   </script>
 
+  <script type="module" src="createFromServe.js"></script>
   <script src="script.js"></script>
   <script src="time.js"></script>
   <script src="guard.js"></script>
+  <script src="enviarPontos.js"></script> <!-- Adicione esta linha -->
 
   <script>
     document.getElementById("ladrilhoDe1").addEventListener("input", function () {
