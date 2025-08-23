@@ -11,17 +11,17 @@ button[disabled] {
 .clear {
     background: transparent;
     border: none;
-    color: white;
+    color: #8d2c2c;
 }
 .solid {
     background: white;
     border: none;
-    color: #2c6d8d;;
+    color: #8d2c2c;;
 }
 .outline {
     background: transparent;
-    color: white;
-    border: 1px solid white;
+    color: #8d2c2c;
+    border: 1px solid #8d2c2c;
 }
 
 .error {

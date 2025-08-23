@@ -9,15 +9,15 @@
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechMinds - Login</title>
+    <title>TechMinds Ultra - Login</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="global.css">
-    <link rel="icon" href="../img/billLogo.png" type="image/x-icon">
+    <link rel="icon" href="../img/billUltra.png" type="image/x-icon">
 </head>
 
 <body>
     <div class="login-header">
-        <h1>TechMinds</h1>
+        <h1>TechMinds Ultra</h1>
         <a href="../index.html" class="back-link">Voltar</a>
     </div>
     
@@ -34,10 +34,19 @@
             <input type="password" name="password" id="password" placeholder="Senha" onchange="onChangePassword()" />
             <div class="error" id="password-required-error">Senha é obrigatória</div>
         </div>
+        <div style="display: flex; justify-content: center;">
+            <button type="button" class="clear" id="recover-password-button" onclick="recoverPassword()" disabled="true">Recuperar senha</button>
+        </div>
         <div>
             <button type="button" class="solid" id="login-button" disabled="true" onclick="login()">Entrar</button>
         </div>
+        <div style="display: flex; justify-content: center;">
+            <button type="button" class="solid" onclick="register()" >Registrar</button>
+        </div>
     </form>
+
+
+    
 <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
 
