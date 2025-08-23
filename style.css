@@ -71,6 +71,7 @@ header button:hover {
   width: auto;
   position: relative;
   transition: transform 0.1s; /* suaviza o movimento */
+  overflow-x: hidden;
 }
 
 .p2 a {
