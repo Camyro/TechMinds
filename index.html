@@ -16,31 +16,42 @@
     <main>
         <section class="p1">
             <div class="degrade">
-                <img src="imagens/billESuaCasa.png" class="piramede" alt="logo">
+                <img src="img/billESuaCasa.png" class="piramede" alt="logo">
             </div>
         </section>
 
-        <section class="p2">
+        <section class="basic">
             <a href="basic/scorecalculator/">
                 <div class="botaoGrande" id="botaoGrande1">
-                    <img src="imagens/calculadora.png" class="botaoimg" alt="spike">
-                    <p>Calculadora</p>
+                    <img src="img/calculadorabasic.png" class="botaoimg" alt="spike">
+                    <p>Calculadora Básica</p>
                 </div>
             </a>
 
-            <!--<div class="botaoGrande">
-                <img src="imagens/manual.png" class="botaoimg" alt="spike">
-                <p>Manuais</p>
-            </div>-->
+            <a href="basic/questiongenerator/">
+                <div class="botaoGrande" id="botaoGrande1">
+                    <img src="img/computador.png" class="botaoimg" alt="spike">
+                    <p>Gerador de desafios da OBR</p>
+                </div>
+            </a>
 
         </section>
     </main>
 
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2024 TechMinds. Todos os direitos reservados.</p>
-            <p>Desenvolvido por C1Studios</p>
-        </div>
+    <div class="gramado"></div>
+
+    <div class="terra" id="terra">
+        <footer>
+            <div class="footer-content">
+                <p>Faça login e tenha acesso a mais recursos</p>
+                <br>
+                <p>&copy; 2024 TechMinds. Todos os direitos reservados.</p>
+                <p>Desenvolvido por C1Studios</p>
+            </div>
+        </footer>
+    </div>
+
+    <footer id="centro">
     </footer>
 
     <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
@@ -68,7 +79,17 @@
         firebase.analytics();
     </script>
 
-    <script src="index.js"></script>
+    <script>
+        const img = document.querySelector('.piramede');
+
+        window.addEventListener('scroll', () => {
+          let scroll = window.scrollY;
+          img.style.transform = `translateY(${-scroll * 1.05}px)`; // 1.5 = mais rápido que o scroll
+        });
+
+    </script>
+
+    <script src="script.js"></script>
 
 </body>
 

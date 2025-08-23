@@ -54,7 +54,7 @@ header button:hover {
 .p1 {
   height: 100vh;
   width: 100%;
-  background-image: url("imagens/nuvens.svg");
+  background-image: url("img/nuvens.svg");
 }
 
 .degrade {
@@ -69,19 +69,15 @@ header button:hover {
 .piramede {
   height: 70vh;
   width: auto;
-  object-fit: contain;
-}
-
-.p2 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  padding: 20px;
-  height: 100vh;
+  position: relative;
+  transition: transform 0.1s; /* suaviza o movimento */
 }
 
 .p2 a {
+  text-decoration: none
+}
+
+.basic a {
   text-decoration: none
 }
 
@@ -121,10 +117,58 @@ header button:hover {
   filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
 }
 
-footer{
-  background-image: url("imagens/gramado.svg");
+.gramado{
+  background-image: url("img/gramado.svg");
+  padding: 15px;
+  width: 100%;
+}
+
+.terra{
+  background-image: url("img/terra.svg");
+  padding: 0;
+}
+
+#centro{
+  background-color: #8d2c2c;
+  color: white;
+}
+
+.footer-content{
+  display: flex;
+  padding: 20px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.centro{
   padding: 50px;
+  background: linear-gradient(rgba(255, 255, 255, 0) 0%,  rgba(255, 255, 255, 0) 25%, #8d2c2c 100%);
+  width: 100%;
+  color: white;
   display: flex;
   justify-content: center;
+  align-items: center;
+  gap: 20px;
+  height: 100vh;
+}
+
+.basic{
+  padding: 50px;
+  width: 100%;
   color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  height: 100vh;
+  text-align: center;
+}
+
+@media (max-width: 850px) {
+  .basic {
+    flex-direction: column;
+    height: auto;
+  }
 }

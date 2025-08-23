@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Tech Minds - Calculadora</title>
-  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="style.css">
 
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
@@ -25,10 +25,23 @@
 
   <div class="calc-header">
     <h1>Calculadora</h1>
-    <a href="../index.html" class="back-link">Voltar</a>
+    <a href="../../index.html" class="back-link">Voltar</a>
   </div>
 
   <div class="calc-container">
+    <h2 class="calc-title">Temporizador</h2>
+    <div class="section-content">
+      <div class="timer-container">
+        <div id="timer-display">300</div>
+        <div class="timer-controls">
+          <button id="start-timer" class="timer-btn">Iniciar</button>
+          <button id="pause-timer" class="timer-btn">Pausar</button>
+          <button id="reset-timer" class="timer-btn">Resetar</button>
+        </div>
+        <div class="timer-status" id="timer-status">Pronto para iniciar</div>
+      </div>
+    </div>
+    
     <h2 class="calc-title">Calculadora de Pontuação</h2>
 
     <!--Inicio-->
@@ -43,7 +56,7 @@
     <!--Ladrilhos-->
     <div class="section-content">
       <h3>🔲 Ladrilhos</h3>
-      
+
       <div class="form-group">
         <label>Primeira Tentativa (5 pontos)</label>
         <input type="number" id="ladrilhoDe1" class="caixaDeTexto" min="0" placeholder="0">
@@ -63,7 +76,7 @@
     <!--Perigos-->
     <div class="section-content">
       <h3>⚠️ Perigos</h3>
-      
+
       <div class="form-group">
         <label>Superar Interseção ou Beco sem Saída (10 pontos)</label>
         <input type="number" id="BecoESaida" class="caixaDeTexto" min="0" placeholder="0">
@@ -98,7 +111,7 @@
     <!--Resgate-->
     <div class="section-content">
       <h3>🚑 Resgate</h3>
-      
+
       <div class="area-group area-verde">
         <div class="area-title">Área Verde</div>
         <div class="checkbox-group">
@@ -186,7 +199,8 @@
     firebase.analytics();
   </script>
 
-  <script src="calculator.js"></script>
+  <script src="script.js"></script>
+  <script src="time.js"></script>
   <script src="guard.js"></script>
 
   <script>
