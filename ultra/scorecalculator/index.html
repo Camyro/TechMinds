@@ -178,75 +178,87 @@
       <div id="resultado">0</div>
     </div>
 
+    <div class="section-content">
+      <h3>Personalizar o total de pontos</h3>
+      <div class="form-group">
+        <label>Total</label>
+        <input type="number" id="persTotal" class="caixaDeTexto" min="0" placeholder="0">
+      </div>
+    </div>
+
+    <p style="text-align: center; padding: 0 0 15px 0;">O total so será personalizado caso nada for pontuado, isso deve ser ultilizado para envio de pontos de informações extras.</p>
+    
     <div class="form-group">
       <button class="timer-btn" id="btn-salvar" onclick="enviarParaServidor()">Enviar para o servidor</button>
     </div>
-    <p style="text-align: center;">Envie os dados somente depois de verificar</p>
-  </div>
+    <div class="form-group">
+      <button class="timer-btn" onclick="location.reload();">Atualizar a pagina</button>
+    </div>
+    <p style="text-align: center; padding: 15px 0;">Atualize a pagina para enviar um novo conjunto de dados, sem sobrepor os dados antigos.</p>
 
-  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
-  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
 
-  <!-- Add Firebase products that you want to use -->
-  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-analytics.js"></script>
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-analytics.js"></script>
 
-  <script>
-    // Your web app's Firebase configuration
-    const firebaseConfig = {
-      apiKey: "AIzaSyBEVvm_p8aB8KqQZu3uhfyFNqB3kLaPwKg",
-      authDomain: "techminds-f4838.firebaseapp.com",
-      projectId: "techminds-f4838",
-      storageBucket: "techminds-f4838.firebasestorage.app",
-      messagingSenderId: "528859331234",
-      appId: "1:528859331234:web:b73df6c15d3e33f91d75fb",
-      measurementId: "G-7RKWDRXFWW"
-    };
+    <script>
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyBEVvm_p8aB8KqQZu3uhfyFNqB3kLaPwKg",
+        authDomain: "techminds-f4838.firebaseapp.com",
+        projectId: "techminds-f4838",
+        storageBucket: "techminds-f4838.firebasestorage.app",
+        messagingSenderId: "528859331234",
+        appId: "1:528859331234:web:b73df6c15d3e33f91d75fb",
+        measurementId: "G-7RKWDRXFWW"
+      };
 
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-    firebase.analytics();
-  </script>
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
 
-  <script type="module" src="createFromServe.js"></script>
-  <script src="script.js"></script>
-  <script src="time.js"></script>
-  <script src="guard.js"></script>
-  <script src="enviarPontos.js"></script> <!-- Adicione esta linha -->
+    <script type="module" src="createFromServe.js"></script>
+    <script src="script.js"></script>
+    <script src="time.js"></script>
+    <script src="guard.js"></script>
+    <script src="enviarPontos.js"></script> <!-- Adicione esta linha -->
 
-  <script>
-    document.getElementById("ladrilhoDe1").addEventListener("input", function () {
-      this.value = this.value.replace(/\D/g, ""); // remove tudo que não for número
-    });
-    document.getElementById("ladrilhoDe2").addEventListener("input", function () {
-      this.value = this.value.replace(/\D/g, ""); // remove tudo que não for número
-    });
-    document.getElementById("ladrilhoDe3").addEventListener("input", function () {
-      this.value = this.value.replace(/\D/g, ""); // remove tudo que não for número
-    });
-    document.getElementById("BecoESaida").addEventListener("input", function () {
-      this.value = this.value.replace(/\D/g, ""); // remove tudo que não for número
-    });
-    document.getElementById("Gangorra").addEventListener("input", function () {
-      this.value = this.value.replace(/\D/g, ""); // remove tudo que não for número
-    });
-    document.getElementById("obstaculo").addEventListener("input", function () {
-      this.value = this.value.replace(/\D/g, ""); // remove tudo que nãoför número
-    });
-    document.getElementById("gap").addEventListener("input", function () {
-      this.value = this.value.replace(/\D/g, ""); // remove tudo que não for número
-    });
-    document.getElementById("rampa").addEventListener("input", function () {
-      this.value = this.value.replace(/\D/g, ""); // remove tudo que não for número
-    });
-    document.getElementById("lombada").addEventListener("input", function () {
-      this.value = this.value.replace(/\D/g, ""); // remove tudo que não for número
-    });
-    document.getElementById("tentativas").addEventListener("input", function () {
-      this.value = this.value.replace(/\D/g, ""); // remove tudo que não for número
-    });
-  </script>
+    <script>
+      document.getElementById("ladrilhoDe1").addEventListener("input", function () {
+        this.value = this.value.replace(/\D/g, ""); // remove tudo que não for número
+      });
+      document.getElementById("ladrilhoDe2").addEventListener("input", function () {
+        this.value = this.value.replace(/\D/g, ""); // remove tudo que não for número
+      });
+      document.getElementById("ladrilhoDe3").addEventListener("input", function () {
+        this.value = this.value.replace(/\D/g, ""); // remove tudo que não for número
+      });
+      document.getElementById("BecoESaida").addEventListener("input", function () {
+        this.value = this.value.replace(/\D/g, ""); // remove tudo que não for número
+      });
+      document.getElementById("Gangorra").addEventListener("input", function () {
+        this.value = this.value.replace(/\D/g, ""); // remove tudo que não for número
+      });
+      document.getElementById("obstaculo").addEventListener("input", function () {
+        this.value = this.value.replace(/\D/g, ""); // remove tudo que nãoför número
+      });
+      document.getElementById("gap").addEventListener("input", function () {
+        this.value = this.value.replace(/\D/g, ""); // remove tudo que não for número
+      });
+      document.getElementById("rampa").addEventListener("input", function () {
+        this.value = this.value.replace(/\D/g, ""); // remove tudo que não for número
+      });
+      document.getElementById("lombada").addEventListener("input", function () {
+        this.value = this.value.replace(/\D/g, ""); // remove tudo que não for número
+      });
+      document.getElementById("tentativas").addEventListener("input", function () {
+        this.value = this.value.replace(/\D/g, ""); // remove tudo que não for número
+      });
+    </script>
 </body>
 
 </html>

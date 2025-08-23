@@ -8,6 +8,7 @@ document.getElementById("gap").value = "0";
 document.getElementById("rampa").value = "0";
 document.getElementById("lombada").value = "0";
 document.getElementById("tentativas").value = "0";
+document.getElementById("persTotal").value = "0";
 
 setInterval(function() {
   //Informações essenciais
@@ -21,6 +22,7 @@ setInterval(function() {
   var rampa = document.getElementById("rampa").value;
   var lombada = document.getElementById("lombada").value;
   var tentativas = document.getElementById("tentativas").value;
+  var persTotal = document.getElementById("persTotal").value;
 
   //Mudar para numero
   var nLadrilhoDePrimeira = parseInt(ladrilhoDePrimeira);
@@ -33,6 +35,7 @@ setInterval(function() {
   var nrampa = parseInt(rampa);
   var nlombada = parseInt(lombada);
   var ntentativas = parseInt(tentativas);
+  var npersTotal = parseInt(persTotal);
 
   // CheckBox
   // Inicio
@@ -100,6 +103,10 @@ setInterval(function() {
   total = total * RG2;
   total = total * RR;
   total = total * desafio;
+
+  if (total == 0 && npersTotal != 0) {
+    total = npersTotal
+  }
   
   document.getElementById("resultado").innerHTML = total;
 }
