@@ -28,6 +28,7 @@ body {
     padding: 20px;
     background-color: #2c6d8d;
     color: white;
+    width: 100%;
 }
 
 .calc-header h1 {
@@ -205,33 +206,3 @@ h3 {
     transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba(44, 109, 141, 0.3);
 }
-
-/* Grupos de área (Verde/Vermelha) */
-.area-group {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    margin-bottom: 15px;
-    border: 1px solid #e1e5e9;
-}
-
-.area-title {
-    font-weight: bold;
-    color: #2c6d8d;
-    margin-bottom: 15px;
-    font-size: 18px;
-    padding-bottom: 8px;
-}
-
-.area-verde .area-title {
-    color: #28a745;
-}
-
-.area-vermelha .area-title {
-    color: #dc3545;
-}
-
-
-
-
-
