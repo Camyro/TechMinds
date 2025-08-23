@@ -155,7 +155,7 @@ header button:hover {
   justify-content: center;
   align-items: center;
   gap: 20px;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .basic{
@@ -166,7 +166,7 @@ header button:hover {
   justify-content: center;
   align-items: center;
   gap: 20px;
-  height: 100vh;
+  min-height: 100vh;
   text-align: center;
 }
 
