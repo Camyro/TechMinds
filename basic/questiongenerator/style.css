@@ -69,3 +69,21 @@ button:hover {
   background-color: #ddd;
   color: #2c6d8d;
 }
+
+/* Media query para dispositivos móveis */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px; /* Aumenta o tamanho da fonte base */
+  }
+
+  .calc-header h1 {
+    font-size: 20px; /* Ajusta o tamanho do título */
+  }
+
+  button,
+  .back-link {
+    padding: 8px 16px; /* Reduz o preenchimento para não ocupar muito espaço */
+    font-size: 14px; /* Ajusta o tamanho da fonte dos botões */
+    margin: 10px;
+  }
+}
