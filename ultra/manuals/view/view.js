@@ -39,6 +39,7 @@ function addTransactionsToScreen(teste) {
         const propertyName = siteParam; // Se siteParam estiver presente, use isso, caso contrário, use 'site'
         const siteValue = teste[0][propertyName] || 'Dados não encontrados'; // Acessa a propriedade dinamicamente
         document.getElementById("title").innerHTML = propertyName + " - View Ultra" || 'Erro - View Ultra';
+        document.getElementById("titlePage").innerHTML = propertyName + " - View Ultra" || 'Erro - View Ultra';
         element.innerHTML = siteValue;
     } else if (!element) {
         console.error('Elemento com id "element" não encontrado no DOM.');
