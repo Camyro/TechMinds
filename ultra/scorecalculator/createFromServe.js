@@ -54,7 +54,7 @@ function coletarDados() {
             // Tentativas
             tentativasUltimoCheckpoint: parseInt(document.getElementById('tentativas').value) || 0
         },
-        pontos: pontuacaoTotal
+        pontosOBR: pontuacaoTotal
     };
 }
 
@@ -99,7 +99,7 @@ function enviarParaServidor() {
         // Se já existe um documento ID, atualizar. Caso contrário, criar novo
         if (documentoAtualId) {
             // Atualizar documento existente
-            db.collection("pontos").doc(documentoAtualId).set(dados)
+            db.collection("pontosOBR").doc(documentoAtualId).set(dados)
                 .then(() => {
                     console.log("Documento atualizado com ID: ", documentoAtualId);
                     alert(`Dados atualizados com sucesso! Email: ${emailUsuario}`);
@@ -115,7 +115,7 @@ function enviarParaServidor() {
                 });
         } else {
             // Criar novo documento
-            db.collection("pontos").add(dados)
+            db.collection("pontosOBR").add(dados)
                 .then((docRef) => {
                     documentoAtualId = docRef.id; // Salvar ID para próximas atualizações
                     console.log("Documento criado com ID: ", docRef.id);

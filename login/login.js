@@ -154,5 +154,5 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function register() {
-    window.location.href = "https://forms.gle/dN9LfYrZAK3x7yV56";
+    window.location.href = "https://forms.gle/NQrkQwdcmYw2986bA";
 }

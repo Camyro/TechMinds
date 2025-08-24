@@ -6,25 +6,29 @@ firebase.auth().onAuthStateChanged(user => {
     if (!user) {
         element.innerHTML = `<h1>TechMinds</h1>
         <a href="login/"><button>Login</button></a>`;
-    } else{
+    } else {
         element.innerHTML = `<h1>TechMinds</h1>
         <div class="user-info">
             <span class="user-email">${user.email}</span>
             <button type="button" class="clear" onclick="logout()">Sair</button>
         </div>`;
 
-        terra.innerHTML = `<section class="p2">
-        <div class="centro">
-            <a href="ultra/scorecalculator/">
-                <div class="botaoGrande" id="botaoGrande1">
-                    <img src="img/calculadoraultra.png" class="botaoimg" alt="spike">
-                    <p>Calculadora Ultra</p>
-                </div>
-            </a>
-        </div>
+        terra.innerHTML = `<section class="p2 p3 basic">
+        <a href="ultra/scorecalculator/">
+            <div class="botaoGrande" id="botaoGrande1">
+                <img src="img/calculadoraultra.png" class="botaoimg" alt="spike">
+                <p>Calculadora Ultra</p>
+            </div>
+        </a>
+        <a href="ultra/manuals/">
+            <div class="botaoGrande" id="botaoGrande1">
+                <img src="img/manual.png" class="botaoimg" alt="spike">
+                <p>Manuais</p>
+            </div>
+        </a>
 
-        </section>`;
-        
+    </section>`;
+
         centro.innerHTML = `
         <div class="footer-content">
                 <br>

@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
 // Função para carregar dados do Firestore
 async function carregarDados() {
     try {
-        const snapshot = await db.collection("pontos").orderBy("data", "desc").get();
+        const snapshot = await db.collection("pontosOBR").orderBy("data", "desc").get();
         todasPontuacoes = [];
 
         snapshot.forEach((doc) => {
@@ -40,8 +40,8 @@ async function carregarDados() {
 function exibirEstatisticas() {
     const totalAvaliacoes = todasPontuacoes.length;
     const usuariosUnicos = new Set(todasPontuacoes.map(p => p.email)).size;
-    const pontuacaoMedia = Math.round(todasPontuacoes.reduce((sum, p) => sum + p.pontos, 0) / totalAvaliacoes) || 0;
-    const maiorPontuacao = Math.max(...todasPontuacoes.map(p => p.pontos)) || 0;
+    const pontuacaoMedia = Math.round(todasPontuacoes.reduce((sum, p) => sum + p.pontosOBR, 0) / totalAvaliacoes) || 0;
+    const maiorPontuacao = Math.max(...todasPontuacoes.map(p => p.pontosOBR)) || 0;
 
     document.getElementById('total-avaliacoes').textContent = totalAvaliacoes;
     document.getElementById('usuarios-unicos').textContent = usuariosUnicos;
@@ -66,7 +66,7 @@ function exibirPontuacoes() {
                 <div class="email">${pontuacao.email}</div>
                 <div class="data">${data}</div>
             </div>
-            <div class="pontuacao">${pontuacao.pontos}</div>
+            <div class="pontuacao">${pontuacao.pontosOBR}</div>
         `;
 
         container.appendChild(item);
@@ -87,7 +87,7 @@ function criarRanking() {
 
     // Converter para array e ordenar por pontuação
     rankingData = Array.from(usuariosMap.values())
-        .sort((a, b) => b.pontos - a.pontos);
+        .sort((a, b) => b.pontosOBR - a.pontosOBR);
 
     exibirRanking();
 }
@@ -115,7 +115,7 @@ function exibirRanking() {
                 <div class="email">${pontuacao.email}</div>
                 <div class="data">Última avaliação: ${data}</div>
             </div>
-            <div class="pontuacao">${pontuacao.pontos}</div>
+            <div class="pontuacao">${pontuacao.pontosOBR}</div>
         `;
 
         container.appendChild(item);
@@ -134,7 +134,7 @@ function mostrarDetalhes(pontuacao, index) {
 
     let comparacaoHTML = '';
     if (proximaPontuacao) {
-        const diferenca = pontuacao.pontos - proximaPontuacao.pontos;
+        const diferenca = pontuacao.pontosOBR - proximaPontuacao.pontosOBR;
         const classDiferenca = diferenca > 0 ? 'positiva' : diferenca < 0 ? 'negativa' : 'neutro';
         const sinal = diferenca > 0 ? '+' : '';
         const dataProxima = new Date(proximaPontuacao.data).toLocaleString('pt-BR');
@@ -142,7 +142,7 @@ function mostrarDetalhes(pontuacao, index) {
         comparacaoHTML = `
             <div class="comparacao">
                 <h4>Comparação com a Pontuação Anterior</h4>
-                <p><strong>Pontuação anterior:</strong> ${proximaPontuacao.pontos} pontos (${dataProxima})</p>
+                <p><strong>Pontuação anterior:</strong> ${proximaPontuacao.pontosOBR} pontos (${dataProxima})</p>
                 <p><strong>Diferença:</strong> <span class="diferenca ${classDiferenca}">${sinal}${diferenca} pontos</span></p>
             </div>
         `;
@@ -152,7 +152,7 @@ function mostrarDetalhes(pontuacao, index) {
         <div>
             <p><strong>Email:</strong> ${pontuacao.email}</p>
             <p><strong>Data:</strong> ${data}</p>
-            <p><strong>Pontuação Total:</strong> <span style="font-size: 1.5em; color: #8d2c2c; font-weight: bold;">${pontuacao.pontos}</span></p>
+            <p><strong>Pontuação Total:</strong> <span style="font-size: 1.5em; color: #8d2c2c; font-weight: bold;">${pontuacao.pontosOBR}</span></p>
         </div>
 
         <div class="detalhes-grid">
